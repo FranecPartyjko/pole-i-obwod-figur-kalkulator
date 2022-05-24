@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>pole i obwód trójkąt</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        
+    </head>
+
+    <body>
+
+        <script>
+
+            function potwierdzenie()
+            {
+                var bok1=Number(document.getElementById('bok1').value);
+                var bok2=Number(document.getElementById('bok2').value);
+                var bok3=Number(document.getElementById('bok3').value);
+
+                var p=(bok1+bok2+bok3)/2; //połowa obwodu trójkąta     wartość p
+                var to_pod_pierwiastek=p*(p-bok1)*(p-bok2)*(p-bok3)    
+                var pole=Math.sqrt(to_pod_pierwiastek);//w pierwiastku
+
+                var obwod=bok1+bok2+bok3;
+
+                if(bok1>0)
+                {
+                    document.getElementById("output").innerHTML=
+                    "<br>Długość boku a którą podałeś wynosi: <b>"+bok1+
+                    "</b> <br>Długość boku b którą podałeś wynosi: <b>"+bok2+
+                    "</b> <br>Długość boku c którą podałeś wynosi: <b>"+bok3+
+
+                    "</b> <br><br> Pole tego trójkąta wynosi: <b>"+pole+
+                    "</b> <br> Obwód tego trójkąta wynosi: <b>"+obwod+
+                    "</b> <br><br>";           
+                }
+                else
+                {
+                    document.getElementById("output").innerHTML="<br> bok nie może byc ujemny lub równy 0 <br><br>";
+                }
+                if(bok2>0)
+                {
+                    document.getElementById("output").innerHTML=
+                    "<br>Długość boku a którą podałeś wynosi: <b>"+bok1+
+                    "</b> <br>Długość boku b którą podałeś wynosi: <b>"+bok2+
+                    "</b> <br>Długość boku c którą podałeś wynosi: <b>"+bok3+
+
+                    "</b> <br><br> Pole tego trójkąta wynosi: <b>"+pole+
+                    "</b> <br> Obwód tego trójkąta wynosi: <b>"+obwod+
+                    "</b> <br><br>";     
+                }
+                else
+                {
+                    document.getElementById("output").innerHTML="<br> bok nie może byc ujemny lub równy 0 <br><br>";
+                }
+                if(bok3>0)
+                {
+                    document.getElementById("output").innerHTML=
+                    "<br> Długość boku a którą podałeś wynosi: <b>"+bok1+
+                    "</b> <br>Długość boku b którą podałeś wynosi: <b>"+bok2+
+                    "</b> <br>Długość boku c którą podałeś wynosi: <b>"+bok3+
+
+                    "</b> <br><br> Pole tego trójkąta wynosi: <b>"+pole+
+                    "</b> <br> Obwód tego trójkąta wynosi: <b>"+obwod+
+                    "</b> <br><br>";     
+                }
+                else
+                {
+                    document.getElementById("output").innerHTML="<br> bok nie może byc ujemny lub równy 0 <br><br>";
+                }
+            }
+        </script>
+        
+        <div class="pakiet1">
+
+            <a href="index.html">
+                <div id="powrot">
+                    <br>powrót do menu głównego
+                </div>
+            </a>
+
+        </div>
+        
+
+        <div id="glowne">
+
+            <div id="kwadrat">
+                <h1> <br><b>pole i obwód trójkąta</b> </h1>
+            </div>
+
+            <div id="input">
+
+                <br>
+                Podaj długość boku a: <input type="number" id="bok1">
+                <br>
+                Podaj długość boku b: <input type="number" id="bok2">
+                <br>
+                Podaj długość boku c: <input type="number" id="bok3">
+                <br><br>
+                <input type="submit" id="przycisk1" value="potwierdz" onclick="potwierdzenie()" />
+                <br><br>
+
+            </div>
+
+        </div> 
+
+        <div id="output"> <!-- innerHTML i css --> </div>
+
+
+    </body>
+
+</html>  
